@@ -1,6 +1,5 @@
 require("dotenv").config({ path: __dirname + "/.env" });
 const { twitterClient } = require("./twitterClient.js")
-// const cron = require('node-cron'); // Importa el módulo cron
 
 const tweet = async () => {
   try {
@@ -12,10 +11,4 @@ const tweet = async () => {
 
 tweet();
 
-/*node
-cron.schedule('38 19 * * *', tweet, {
-  timezone: "America/Argentina/Buenos_Aires"
-});*/
-
-
-// Este fue mi primer script, funciona para publicar un Hello World!
+// Este es el script más sencillo, funciona para publicar un Hello World!
