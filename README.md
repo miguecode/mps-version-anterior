@@ -1,6 +1,6 @@
 # 🤖 Bot de Twitter
 
-Este repositorio contiene lo necesario para poder vincularte a una una cuenta de X/Twitter mediante su API, y poder realizar publicaciones (en este caso de imágenes).
+Este repositorio contiene lo necesario para poder vincularte a una cuenta de X/Twitter mediante su API, y poder realizar publicaciones (en este caso de imágenes).
 
 ## ⚽ ¿Qué es [Messi Perfect Shots](https://x.com/MessiPF)?
 
