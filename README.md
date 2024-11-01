@@ -12,7 +12,7 @@ Messi Perfect Shots es mi bot de X/Twitter. La idea del bot es muy sencilla: pub
 
 ## 🤔 ¿Cómo funciona el proyecto?
 
-- En el proyecto hay distintos archivos **JavaScript**, los cuales se encargan de la vinculación con la cuenta de X/Twitter a la que queremos apuntar, y otros que realizan la selección aleatoria de la imágen y su publicación.
+- En el proyecto hay distintos archivos **JavaScript**, los cuales se encargan de la vinculación con la cuenta de X/Twitter a la que queremos apuntar, y otros que realizan la selección aleatoria de la imagen y su publicación.
 
 - También hay varias carpetas con imágenes. **Estas carpetas no están subidas al repositorio**, pero son necesarias para que el script **index.js** sepa de dónde elegir las fotos. Esto último también se podría hacer consumiendo las imágenes desde una API, pero para este caso me pareció óptimo tener mis propias imágenes y guardarlas de forma local.
     
@@ -20,7 +20,7 @@ Messi Perfect Shots es mi bot de X/Twitter. La idea del bot es muy sencilla: pub
 
 - Para que el proyecto funcione, es necesario tener instalado [Node.js](https://nodejs.org/en/). Una vez clonado el repositorio y con Node.js instalado, hay que usar el comando ```npm install```, para tener todos los archivos necesarios de la API de X/Twitter, la cual es **twitter-api-v2** en su versión 1.16.1. También hacemos uso de otros paquetes como **dotenv**. Todo aparecerá en la carpeta **node_modules**.
 
-- El proceso de selección de imágenes y su publicación se trata de elegir de forma aleatoria una de todas las fotos ubicadas en la carpeta 'fotos_oficiales'. Una vez elegida y publicada, esta misma imágen se mueve a 'fotos_publicadas'. Esto es para esa imágen ya no sea seleccionable en un futuro.
+- El proceso de selección de imágenes y su publicación se trata de elegir de forma aleatoria una de todas las fotos ubicadas en la carpeta 'fotos_oficiales'. Una vez elegida y publicada, esta misma imagen se mueve a 'fotos_publicadas'. Esto es para esa imagen ya no sea seleccionable en un futuro.
 
 ## 🐦 ¿Cómo crear la cuenta y vincularse a ella mediante el código?
 
