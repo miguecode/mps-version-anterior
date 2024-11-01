@@ -1,6 +1,6 @@
 # 🤖 Bot de Twitter
 
-Este repositorio contiene la explicación de cómo crear un bot de X/Twitter que se dedique a publicar imágenes. Utilizo Node.js y JavaScript.
+Este repositorio contiene la explicación de cómo crear un bot de X/Twitter que se dedique a publicar imágenes, mostrando mi ejemplo. Utilizo Node.js y JavaScript.
 
 ## ⚽ ¿Qué es [Messi Perfect Shots](https://x.com/MessiPF)?
 
