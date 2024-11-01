@@ -1,34 +1,31 @@
-require("dotenv").config({ path: __dirname + "/.env" }); // Me traigo la configuración especificada del archivo .env
-const { twitterClient } = require("./twitterClient.js"); // Importo el cliente de Twitter
-const fs = require('fs'); // Importo el módulo fs para leer archivos
-const path = require('path'); // Importo el módulo path para manipular rutas de archivos
+require("dotenv").config({ path: __dirname + "/.env" });
+const { twitterClient } = require("./twitterClient.js");
+const fs = require('fs');
+const path = require('path');
 
-// __dirname es una palabra reservada, un string que contiene el valor de la ruta
-// en la que está ubicado este archivo donde estoy escribiendo.
-
-// Función que devuelve la ruta completa de un archivo elegido al azar de la carpeta 'fotos_oficiales'
+// Función que devuelve la ruta completa de un archivo elegido al azar dentro de la carpeta 'fotos_oficiales'
 const seleccionarImagenAlAzar = () => {
   try {
-    const directorioFotos = path.join(__dirname, 'fotos_oficiales'); // Guardo la ruta de la carpeta contenedora de fotos
-    const archivos = fs.readdirSync(directorioFotos); // Creo un array de strings, cada elemento va a ser el nombre de un archivo de la carpeta contenedora
-    archivoAleatorio = archivos[Math.floor(Math.random() * archivos.length)]; // Selecciono un archivo al azar, y guardo su nombre
-    const rutaImagen = path.join(directorioFotos, archivoAleatorio); // Guardo la ruta completa de la imagen seleccionada al azar
+    const directorioFotos = path.join(__dirname, 'fotos_oficiales');
+    const archivos = fs.readdirSync(directorioFotos);
+    archivoAleatorio = archivos[Math.floor(Math.random() * archivos.length)];
+    const rutaImagen = path.join(directorioFotos, archivoAleatorio);
     
-    return rutaImagen; // Retorno la ruta completa de la imagen seleccionada al azar
+    return rutaImagen;
   } catch (error) {
-    console.log('Ocurrió un error en la función seleccionarImagenAlAzar' + error);
+    console.log('Ocurrió un error en la función seleccionarImagenAlAzar: ' + error);
   }
 };
 
-// Función que mueve la imagen seleccionada a la carpeta de fotos ya publicadas
+// Función que mueve la imagen seleccionada a la carpeta 'fotos_publicadas'
 const moverImagenPublicada = (rutaImagen) => {
   try {
-    const directorioFotosPublicadas = path.join(__dirname, 'fotos_publicadas'); // Guardo la ruta de la carpeta contenedora de fotos
-    const nombreArchivo = path.basename(rutaImagen); // Me guardo el nombre del archivo
-    const rutaNueva = path.join(directorioFotosPublicadas, nombreArchivo); // Creo la ruta nueva donde se va a situar la imagen
-    fs.renameSync(rutaImagen, rutaNueva); // La muevo
+    const directorioFotosPublicadas = path.join(__dirname, 'fotos_publicadas');
+    const nombreArchivo = path.basename(rutaImagen);
+    const rutaNueva = path.join(directorioFotosPublicadas, nombreArchivo);
+    fs.renameSync(rutaImagen, rutaNueva);
   } catch (error) {
-    console.error('Ocurrió un error en la función moverImagenPublicada', error);
+    console.error('Ocurrió un error en la función moverImagenPublicada: ', error);
   }
 };
 
@@ -38,24 +35,27 @@ const publicarImagenEnTwitter = async (rutaImagen) => {
     // Primero necesito subir la imagen al servidor de Twitter, para que me devuelva su ID
     let mediaId = await twitterClient.v1.uploadMedia(rutaImagen); 
     
-    // Realizo la publicación
+    // Ahora, realizo la publicación
     await twitterClient.v2.tweet({
       text: '', // Aca podría escribir algo en el Tweet
       media: {
-        media_ids: [mediaId] // Especifico el ID de la imagen que subí al servidor de Twitter
+        media_ids: [mediaId]
       }
     });
 
     console.log(`Se publicó correctamente la imagen ${rutaImagen}`);
-    moverImagenPublicada(rutaImagen); // Muevo la foto a la carpeta de fotos publicadas, para que ya no sea elegible
+
+    // Muevo la foto a la carpeta de fotos publicadas, para que ya no sea elegible
+    moverImagenPublicada(rutaImagen);
   } catch (error) {
-      console.error('Ocurrió un error en la función publicarImagenEnTwitter): ', error);
+    console.error('Ocurrió un error en la función publicarImagenEnTwitter): ', error);
   }
 };
 
+// Esto sirve para publicar fotos específicas que queramos, y que no se seleccionen al azar.
 // const imagenEspecifica = path.join(__dirname, 'fotos_oficiales') + "/nombreArchivo.jpg";
 // const imagenEspecifica2 = path.join(__dirname, 'otras_fotos') + '/nombreArchivo.jpg';
 
-// Invoco ambas funciones para realizar el proceso
+// Invoco ambas funciones para realizar la publicación
 const imagenSeleccionada = seleccionarImagenAlAzar();
 publicarImagenEnTwitter(imagenSeleccionada);
