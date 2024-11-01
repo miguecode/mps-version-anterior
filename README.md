@@ -10,7 +10,7 @@ Messi Perfect Shots es mi bot de X/Twitter. La idea del bot es muy sencilla: pub
 
 ![image](https://github.com/user-attachments/assets/52f19213-f705-4936-9c03-7926fca1d14f)
 
-## 🤔 ¿Cómo funciona el proyecto?
+## 🤔 ¿Cómo funciona?
 
 - En el proyecto hay distintos archivos **JavaScript**, los cuales se encargan de la vinculación con la cuenta de X/Twitter a la que queremos apuntar, y otros que realizan la selección aleatoria de la imagen y su publicación.
 
@@ -22,7 +22,7 @@ Messi Perfect Shots es mi bot de X/Twitter. La idea del bot es muy sencilla: pub
 
 - El proceso de selección de imágenes y su publicación se trata de elegir de forma aleatoria una de todas las fotos ubicadas en la carpeta 'fotos_oficiales'. Una vez elegida y publicada, esta misma imagen se mueve a 'fotos_publicadas'. Esto es para esa imagen ya no sea seleccionable en un futuro.
 
-## 🐦 ¿Cómo crear la cuenta y vincularse a ella mediante el código?
+## 🐦 ¿Cómo crear mi propia cuenta Bot?
 
 1. El primer paso es crear la cuenta en X/Twitter de forma normal, en su web [X](https://x.com/home/).
 
@@ -30,11 +30,13 @@ Messi Perfect Shots es mi bot de X/Twitter. La idea del bot es muy sencilla: pub
 
 3. Una vez iniciada la sesión en Developer X, tenemos que crear un proyecto. Cuando ya lo creamos, la plataforma nos va a brindar unas credenciales que vamos a tener que usar en el código para vincularlo al proyecto local. Es decir, hay que vincular el proyecto creado en este sitio web, con el proyecto local de nuestra máquina.
 
-- OJO: Algo importante es que, antes de copiar los valores de las autenticaciones, hay que CONFIGURAR la forma de autenticación. ¿Por qué? Porque el proyecto, de forma predeterminada, está configurado para que sea de sólo Lectura. Hay que cambiar ese ajuste para que sea de Lectura y de Escritura. Una vez hecho eso, ahora sí tiene sentido generar todos los códigos, y copiarlos. 
+- **OJO**: Algo importante es que, antes de copiar los valores de las autenticaciones, hay que CONFIGURAR la forma de autenticación. ¿Por qué? Porque el proyecto, de forma predeterminada, está configurado para que sea de sólo Lectura. Hay que cambiar ese ajuste para que sea de Lectura y de Escritura. Una vez hecho eso, ahora sí tiene sentido generar todos los códigos, y copiarlos. 
 
-4. Si ya correctamente ejecutamos el comando ```npm install``` en nuestro proyecto, vamos a poder usar el paquete **dotenv**, el cual sirve para escribir archivos de tipo .env, que funcionan para guardar información sensible como variables de enterno. En este caso, vamos a guardar nuestros códigos de autenticación, los cuales nos brindó la plataforma de desarrolladores de X/Twitter.
+4. Ahora tenemos que vincular nuestro proyecto hecho en código, con nuestro proyecto en Developer X. Primeramente, hay que instalar [Node.js](https://nodejs.org/en/) en nuestro sistema. Después, clonamos este proyecto y dentro de él, tenemos que ejecutar el comando ```npm install```.
 
-5. Finalmente, vamos a crear un archivo llamado ```.env``` dentro del proyecto, el cual se tiene que ver así:
+5. Terminada la instalación, vamos a ver que apareció la carpeta 'node_modules'. Ahora vamos a poder usar la API de X/Twitter y el paquete **dotenv**. Este último paquete sirve para escribir archivos de tipo .env, cuya función es guardar información sensible que, en nuestro caso, van a ser los códigos de autenticación que copiamos anteriormente en Developer X.
+
+6. Finalmente, vamos a crear un archivo llamado ```.env``` dentro del proyecto, el cual se tiene que ver así:
 
     ```env
     NODE_ENV=""
