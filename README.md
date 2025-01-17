@@ -1,14 +1,15 @@
 # 🤖 Bot de Twitter
 
-Este repositorio contiene la explicación de cómo crear un bot de X/Twitter que se dedique a publicar imágenes, mostrando mi ejemplo. Utilizo Node.js y JavaScript.
+Este repositorio contiene la explicación de cómo crear un bot de X/Twitter que se dedique a publicar imágenes, mostrando mi ejemplo "Messi Perfect Shots". Utilizo Node.js y JavaScript.
 
 ## ⚽ ¿Qué es [Messi Perfect Shots](https://x.com/MessiPF)?
 
-Messi Perfect Shots es mi bot de X/Twitter. La idea del bot es muy sencilla: publicar fotos de Lionel Messi en X/Twitter, de forma automática y seleccionadas al azar, todos los días. Empezó a funcionar en mayo de 2024 y consiguió sumar 3.700 seguidores en unos 6 meses, con 346 publicaciones hasta el día de hoy, 29 de octubre de 2024. 
+Messi Perfect Shots es mi bot de X/Twitter. La idea es muy sencilla: publicar fotos de Lionel Messi en X/Twitter, de forma automática y seleccionadas al azar, todos los días. Empezó a funcionar en mayo de 2024 y obtuvo más de 4.000 seguidores en 8 meses, contando con más de 450 publicaciones al día de hoy. 
 
 👉 Link: [Messi Perfect Shots](https://x.com/MessiPF)
 
-![image](https://github.com/user-attachments/assets/52f19213-f705-4936-9c03-7926fca1d14f)
+![image](https://github.com/user-attachments/assets/588dc1ff-20c4-4b82-80fe-f7c057d70754)
+
 
 ## 🤔 ¿Cómo funciona?
 
@@ -20,9 +21,10 @@ Messi Perfect Shots es mi bot de X/Twitter. La idea del bot es muy sencilla: pub
 
 - Para que el proyecto funcione, es necesario tener instalado [Node.js](https://nodejs.org/en/). Una vez clonado el repositorio y con Node.js instalado, hay que usar el comando ```npm install```, para tener todos los archivos necesarios de la API de X/Twitter, la cual es **twitter-api-v2** en su versión 1.16.1. También hacemos uso de otros paquetes como **dotenv**. Todo aparecerá en la carpeta **node_modules**.
 
-- El proceso de selección de imágenes y su publicación se trata de elegir de forma aleatoria una de todas las fotos ubicadas en la carpeta 'fotos_oficiales'. Una vez elegida y publicada, esta misma imagen se mueve a 'fotos_publicadas'. Esto es para esa imagen ya no sea seleccionable en un futuro.
+- El proceso de selección de imágenes y su publicación se trata de elegir de forma aleatoria una de todas las fotos ubicadas en la carpeta 'official-pics'. Una vez elegida y publicada, esta misma imagen se mueve a 'published-pics'. Esto es para que esa imagen ya no sea seleccionable en un futuro.
 
-## 🐦 ¿Cómo crear mi propia cuenta Bot?
+
+## 🐦 Paso a paso para crear una cuenta Bot
 
 1. El primer paso es crear la cuenta en X/Twitter de forma normal, en su web [X](https://x.com/home/).
 
@@ -32,7 +34,7 @@ Messi Perfect Shots es mi bot de X/Twitter. La idea del bot es muy sencilla: pub
 
 - **OJO**: Algo importante es que, antes de copiar los valores de las autenticaciones, hay que CONFIGURAR la forma de autenticación. ¿Por qué? Porque el proyecto, de forma predeterminada, está configurado para que sea de sólo Lectura. Hay que cambiar ese ajuste para que sea de Lectura y de Escritura. Una vez hecho eso, ahora sí tiene sentido generar todos los códigos, y copiarlos. 
 
-4. Ahora tenemos que vincular nuestro proyecto hecho en código, con nuestro proyecto en Developer X. Primeramente, hay que instalar [Node.js](https://nodejs.org/en/) en nuestro sistema. Después, clonamos este proyecto y dentro de él, tenemos que ejecutar el comando ```npm install```.
+4. Tenemos que vincular nuestro proyecto hecho en código, con nuestro proyecto en Developer X. Primeramente, hay que instalar [Node.js](https://nodejs.org/en/) en nuestro sistema. Después, clonamos este proyecto y dentro de él, tenemos que ejecutar el comando ```npm install```.
 
 5. Terminada la instalación, vamos a ver que apareció la carpeta 'node_modules'. Ahora vamos a poder usar la API de X/Twitter y el paquete **dotenv**. Este último paquete sirve para escribir archivos de tipo .env, cuya función es guardar información sensible que, en nuestro caso, van a ser los códigos de autenticación que copiamos anteriormente en Developer X.
 
@@ -70,9 +72,9 @@ Messi Perfect Shots es mi bot de X/Twitter. La idea del bot es muy sencilla: pub
     tweet();
     ```
 
-## ♻️ ¿Cómo hacer que el proceso sea automático?
+## ♻️ Paso a paso para automatizar el proceso
 
-- El archivo **helloWorld.js** sirve sólo para hacer la prueba de la vinculación. Una vez que ya comprobamos que funciona, nos tenemos que centrar en el archivo **index.js**. Este último es el que se dedica a publicar imágenes. Hay que crear las carpetas correspondientes ('fotos_oficiales' y 'fotos_publicadas'), y colocarles las imágenes que queramos.
+- El archivo **helloWorld.js** sirve sólo para hacer la prueba de la vinculación. Una vez que ya comprobamos que funciona, nos tenemos que centrar en el archivo **index.js**. Este último es el que se dedica a seleccionar y publicar imágenes. Hay que crear las carpetas correspondientes ('official-pics' y 'published-pics'), y colocarles las imágenes que queramos (la segunda puede estar vacía).
 
 - Vamos a ver cómo hacer que el script se ejecute las veces que nosotros queramos. Como dije anteriormente, lo hago con el **Programador de Tareas de Windows**. Esto tiene la desventaja de que la máquina debe estar encendida para poder ejecutar el script. Subirlo a la nube sería una solución, pero por el momento no encontré una opción gratuita.
 
@@ -97,3 +99,8 @@ Messi Perfect Shots es mi bot de X/Twitter. La idea del bot es muy sencilla: pub
     ![image](https://github.com/user-attachments/assets/b2882f68-0553-407a-98ae-b7425949629a)
 
     Y dejamos esa configuración. Al seleccionar el script, ponemos la ubicación del archivo **node.exe** en nuestra máquina. Y en los argumentos, tenemos que colocar la ubicación de nuestro archivo **index.js**.
+
+
+- Eso sería todo. De esa forma, el script se va a ejecutar cada vez que se cumpla un desencadenador del Programador de Tareas (siempre y cuando tu máquina esté encendida y tengas conexión a internet). No es necesario que tengas la sesión iniciada en X/Twitter, el programa se encarga de realizar la vinculación de forma automática.
+
+- Si algo no funciona, mi contacto es **junmigue7@gmail.com**
