@@ -11,4 +11,4 @@ const tweet = async () => {
 
 tweet();
 
-// Este es el script más sencillo, funciona para publicar un Hello World!
+// This is the test script, it works to publish "Hello World!"
