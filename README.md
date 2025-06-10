@@ -1,10 +1,16 @@
-# 🤖 Bot de Twitter
+# ⚠ ATENCIÓN: Proyecto deprecado
+
+**Este proyecto fue la primera versión que hice, pero un año después hice un proyecto mejorado que reemplaza a este.**
+
+👉 **Link a la nueva versión: [Messi Perfect Shots 2.0](https://github.com/Leumig/messi-perfect-shots)**
+
+## 🤖 Bot de Twitter
 
 Este repositorio contiene la explicación de cómo crear un bot de X/Twitter que se dedique a publicar imágenes, mostrando mi ejemplo "Messi Perfect Shots". Utilizo Node.js y JavaScript.
 
 ## ⚽ ¿Qué es [Messi Perfect Shots](https://x.com/MessiPF)?
 
-Messi Perfect Shots es mi bot de X/Twitter. La idea es muy sencilla: publicar fotos de Lionel Messi en X/Twitter, de forma automática y seleccionadas al azar, todos los días. Empezó a funcionar en mayo de 2024 y obtuvo más de 4.000 seguidores en 8 meses, contando con más de 450 publicaciones al día de hoy. 
+Messi Perfect Shots es mi bot de X/Twitter. La idea es muy sencilla: publicar fotos de Lionel Messi en X/Twitter, de forma automática y seleccionadas al azar, todos los días. Empezó a funcionar en abril de 2024 y obtuvo más de 4.000 seguidores en unos meses, contando con más de 450 publicaciones al día de hoy.
 
 👉 Link: [Messi Perfect Shots](https://x.com/MessiPF)
 
@@ -104,3 +110,9 @@ Messi Perfect Shots es mi bot de X/Twitter. La idea es muy sencilla: publicar fo
 - Eso sería todo. De esa forma, el script se va a ejecutar cada vez que se cumpla un desencadenador del Programador de Tareas (siempre y cuando tu máquina esté encendida y tengas conexión a internet). No es necesario que tengas la sesión iniciada en X/Twitter, el programa se encarga de realizar la vinculación de forma automática.
 
 - Si algo no funciona, mi contacto es **junmigue7@gmail.com**
+
+## ⚠ ATENCIÓN: Proyecto deprecado
+
+Como aclaré al principio y por si no lo leíste, este proyecto fue la primera versión que hice y ahora está en desuso. Andá a ver la versión mejorada.
+
+👉 Link a la nueva versión: [Messi Perfect Shots](https://github.com/Leumig/messi-perfect-shots)
