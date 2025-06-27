@@ -1,6 +1,6 @@
 # ⚠ ATENCIÓN: Proyecto deprecado
 
-**Este proyecto fue la primera versión que hice, pero un año después hice un proyecto mejorado que reemplaza a este.**
+**Este proyecto fue la primera versión que hice, pero un año después hice un proyecto mejorado que lo reemplaza a este.**
 
 👉 **Link a la nueva versión: [Messi Perfect Shots 2.0](https://github.com/Leumig/messi-perfect-shots)**
 
