@@ -1,4 +1,4 @@
-# ⚠ ATENCIÓN: Proyecto deprecado
+# ⚠ ATENCIÓN: Proyecto deprecad
 
 **Este proyecto fue la primera versión que hice, pero un año después hice un proyecto mejorado que lo reemplaza a este.**
 
