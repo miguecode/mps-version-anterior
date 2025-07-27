@@ -2,7 +2,7 @@
 
 **Este proyecto fue la primera versión que hice, pero un año después hice un proyecto mejorado que lo reemplaza a este.**
 
-👉 **Link a la nueva versión: [Messi Perfect Shots 2.0](https://github.com/Leumig/messi-perfect-shots)**
+👉 **Link a la nueva versión: [Messi Perfect Shots 2.0](https://github.com/miguecode/messi-perfect-shots)**
 
 ## 🤖 Bot de Twitter
 
@@ -115,4 +115,4 @@ Messi Perfect Shots es mi bot de X/Twitter. La idea es muy sencilla: publicar fo
 
 Como aclaré al principio y por si no lo leíste, este proyecto fue la primera versión que hice y ahora está en desuso. Andá a ver la versión mejorada.
 
-👉 Link a la nueva versión: [Messi Perfect Shots](https://github.com/Leumig/messi-perfect-shots)
+👉 Link a la nueva versión: [Messi Perfect Shots](https://github.com/miguecode/messi-perfect-shots)
